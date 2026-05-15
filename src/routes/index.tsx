@@ -476,9 +476,9 @@ function Foot() {
   return (
     <footer className="mx-auto flex max-w-[1400px] flex-col gap-6 px-6 py-12 md:flex-row md:items-end md:justify-between">
       <div>
-        <div className="font-display text-3xl">Servnt</div>
+        <div className="font-display text-3xl">Velvt</div>
         <p className="mt-2 max-w-md text-[13px] text-muted-foreground">
-          A passive observer for people who suspect they're not as focused as they think.
+          A sealed observer for people who suspect they're not as focused as they think.
         </p>
       </div>
       <div className="grid grid-cols-3 gap-8 font-mono text-[11px] uppercase tracking-wider text-muted-foreground">
