@@ -22,7 +22,7 @@ export function MenuBar() {
       <div className="mx-auto flex h-7 max-w-[1400px] items-center justify-between px-4 text-[12px]">
         <div className="flex items-center gap-4 font-medium">
           <span aria-hidden></span>
-          <span className="font-semibold">Servnt</span>
+          <span className="font-semibold">Velvt</span>
           <span className="text-muted-foreground">File</span>
           <span className="text-muted-foreground">Edit</span>
           <span className="text-muted-foreground">View</span>
@@ -32,7 +32,7 @@ export function MenuBar() {
         <div className="flex items-center gap-3 text-muted-foreground">
           <span className="hidden items-center gap-1.5 font-mono text-[11px] text-foreground sm:inline-flex">
             <span className="h-1.5 w-1.5 rounded-full bg-signal pulse-dot" />
-            <span>servnt</span>
+            <span>velvt</span>
           </span>
           <BatteryFull className="h-3.5 w-3.5" />
           <Wifi className="h-3.5 w-3.5" />
