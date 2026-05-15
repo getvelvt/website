@@ -2,13 +2,15 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "velvt-web",
   "compatibility_date": "2025-09-24",
-  "compatibility_flags": ["nodejs_compat"],
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
   "main": "src/server.ts",
   "d1_databases": [
     {
       "binding": "DB",
       "database_name": "velvt-waitlist",
-      "database_id": "00000000-0000-0000-0000-000000000001"
+      "database_id": "ab4301fc-3839-42c6-86a0-3ee952aeda5b"
     }
   ]
 }
