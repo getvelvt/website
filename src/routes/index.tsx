@@ -61,10 +61,10 @@ function Hero() {
             <span className="italic text-muted-foreground">that does not flatter you.</span>
           </h1>
           <p className="mt-6 max-w-xl text-balance text-[17px] leading-relaxed text-muted-foreground">
-            Servnt runs silently in your menu bar, modeling how you actually use
-            your computer. Once or twice a day, it tells you something specific
-            about your focus — in the voice of a neutral data scientist, not a
-            cheerleader.
+            Velvt sits quietly in your menu bar, sealing every observation
+            on-device and modeling how you actually work. Once or twice a
+            day, it tells you something specific about your focus — in the
+            voice of a neutral data scientist, not a cheerleader.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-3">
