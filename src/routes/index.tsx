@@ -10,10 +10,10 @@ import { EventStream } from "@/components/EventStream";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Servnt — passive behavioral intelligence for macOS" },
-      { name: "description", content: "Servnt observes how you actually use your computer and tells you 1–3 specific, slightly uncomfortable truths about your focus per day. No screenshots. No keylogging. Local SQLite." },
-      { property: "og:title", content: "Servnt — passive behavioral intelligence for macOS" },
-      { property: "og:description", content: "1–3 quiet observations a day. The product is the notification." },
+      { title: "Velvt — quiet behavioral intelligence for macOS" },
+      { name: "description", content: "Velvt observes how you actually use your computer and tells you 1–3 specific, slightly uncomfortable truths about your focus per day. Sealed locally. No screenshots. No keylogging." },
+      { property: "og:title", content: "Velvt — quiet behavioral intelligence for macOS" },
+      { property: "og:description", content: "1–3 sealed observations a day. Everything stays on your machine." },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -61,10 +61,10 @@ function Hero() {
             <span className="italic text-muted-foreground">that does not flatter you.</span>
           </h1>
           <p className="mt-6 max-w-xl text-balance text-[17px] leading-relaxed text-muted-foreground">
-            Servnt runs silently in your menu bar, modeling how you actually use
-            your computer. Once or twice a day, it tells you something specific
-            about your focus — in the voice of a neutral data scientist, not a
-            cheerleader.
+            Velvt sits quietly in your menu bar, sealing every observation
+            on-device and modeling how you actually work. Once or twice a
+            day, it tells you something specific about your focus — in the
+            voice of a neutral data scientist, not a cheerleader.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-3">
@@ -244,7 +244,7 @@ function Architecture() {
             <div className="mt-4 grid gap-3 font-mono text-[12px]">
               <Pair raw='"AP Lang Research Paper"' abs='"Document: B"' />
               <Pair raw='"#general — engineering"' abs='"Channel: A"' />
-              <Pair raw='"servnt/agent.swift"' abs='"File: F"' />
+              <Pair raw='"velvt/agent.swift"' abs='"File: F"' />
             </div>
             <p className="mt-5 text-[13px] text-muted-foreground">
               The mapping dictionary lives only on your machine. Insights are
@@ -331,7 +331,7 @@ function Triggers() {
           <div className="mt-4 grid gap-3 font-mono text-[12px] md:grid-cols-2">
             <Hook
               when="if temporal_inactivity > 90m"
-              then='run ~/.servnt/scripts/close_safari.sh'
+              then='run ~/.velvt/scripts/close_safari.sh'
             />
             <Hook
               when="on cluster(VS Code ⇄ Discord) ≥ 12/30m"
@@ -372,31 +372,31 @@ function Hook({ when, then }: { when: string; then: string }) {
 function Tiers() {
   const tiers = [
     {
-      name: "Free", price: "$0", note: "open-source core",
+      name: "Unsealed", price: "$0", note: "open-source core",
       bullets: [
-        "Collection agent (open-source)",
+        "Collection agent (auditable source)",
         "Local fragmentation metrics",
-        "7-day data retention",
-        "100% local operation",
+        "7-day rolling memory",
+        "Sealed on-device · zero network",
       ],
     },
     {
-      name: "Servnt Plus", price: "$6", per: "/ mo", featured: true, note: "the everyday tier",
+      name: "Velvt Vault", price: "$6", per: "/ mo", featured: true, note: "the everyday seal",
       bullets: [
-        "Advanced behavioral modeling",
+        "Full behavioral modeling engine",
         "Cross-application pattern libraries",
-        "1-year data history",
-        "Weekly behavioral reports",
-        "Optional encrypted cloud sync",
+        "1-year encrypted local history",
+        "Weekly sealed behavioral reports",
+        "Optional end-to-end encrypted sync",
       ],
     },
     {
-      name: "Lifetime Local", price: "$49", per: "once", note: "no cloud, no recurring",
+      name: "Sovereign", price: "$49", per: "once", note: "lifetime · airgapped",
       bullets: [
-        "Full feature set, permanent",
-        "Local file processing only",
-        "Local model inference",
-        "Bypass cloud entirely",
+        "Full feature set, permanent license",
+        "Local-only file processing",
+        "On-device model inference",
+        "Hardware-bound key, no cloud path",
       ],
     },
   ];
@@ -448,7 +448,7 @@ function Tiers() {
                     : "border border-border-strong text-foreground hover:bg-surface")
                 }
               >
-                {t.name === "Free" ? "Download agent" : "Get " + t.name}
+                {t.name === "Unsealed" ? "Download agent" : "Get " + t.name}
               </button>
             </div>
           ))}
@@ -476,9 +476,9 @@ function Foot() {
   return (
     <footer className="mx-auto flex max-w-[1400px] flex-col gap-6 px-6 py-12 md:flex-row md:items-end md:justify-between">
       <div>
-        <div className="font-display text-3xl">Servnt</div>
+        <div className="font-display text-3xl">Velvt</div>
         <p className="mt-2 max-w-md text-[13px] text-muted-foreground">
-          A passive observer for people who suspect they're not as focused as they think.
+          A sealed observer for people who suspect they're not as focused as they think.
         </p>
       </div>
       <div className="grid grid-cols-3 gap-8 font-mono text-[11px] uppercase tracking-wider text-muted-foreground">

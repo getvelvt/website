@@ -74,7 +74,7 @@ function NotifCard({ n, active }: { n: Notif; active: boolean }) {
       <div className="flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.18em]">
         <div className="flex items-center gap-2 text-muted-foreground">
           <span className="h-1.5 w-1.5 rounded-full bg-signal" />
-          <span>Servnt</span>
+          <span>Velvt</span>
           <span className="text-dim">·</span>
           <span className={active ? "text-signal" : "text-muted-foreground"}>{n.kind}</span>
         </div>

@@ -44,20 +44,23 @@
 }
 
 :root {
-  --background: oklch(0.16 0.005 60);
-  --foreground: oklch(0.94 0.01 80);
-  --surface: oklch(0.20 0.006 60);
-  --surface-elevated: oklch(0.235 0.007 60);
-  --border: oklch(0.28 0.008 60);
-  --border-strong: oklch(0.36 0.01 60);
-  --muted: oklch(0.24 0.006 60);
-  --muted-foreground: oklch(0.65 0.012 70);
-  --dim: oklch(0.48 0.01 70);
-  --signal: oklch(0.78 0.14 75);
-  --signal-foreground: oklch(0.16 0.005 60);
-  --warn: oklch(0.72 0.16 50);
-  --good: oklch(0.72 0.12 160);
-  --bad: oklch(0.62 0.20 25);
+  /* Velvt — oxblood vault. Deep wine background, bone foreground,
+     burnished crimson signal. Avoids generic primary red by anchoring
+     in warm 20° hue with low chroma surfaces (vault, wax, ledger). */
+  --background: oklch(0.14 0.022 18);
+  --foreground: oklch(0.93 0.012 70);
+  --surface: oklch(0.18 0.028 18);
+  --surface-elevated: oklch(0.215 0.034 18);
+  --border: oklch(0.27 0.036 18);
+  --border-strong: oklch(0.36 0.05 18);
+  --muted: oklch(0.22 0.03 18);
+  --muted-foreground: oklch(0.68 0.018 50);
+  --dim: oklch(0.48 0.022 30);
+  --signal: oklch(0.56 0.19 22);
+  --signal-foreground: oklch(0.97 0.01 80);
+  --warn: oklch(0.74 0.13 60);
+  --good: oklch(0.66 0.09 150);
+  --bad: oklch(0.55 0.22 18);
   --radius: 6px;
 }
 

@@ -3,18 +3,18 @@ import { useEffect, useRef, useState } from "react";
 type Ev = { t: string; app: string; title: string; cat: string };
 
 const STREAM: Ev[] = [
-  { t: "14:02:11", app: "VS Code",   title: "servnt/agent.swift",        cat: "FOCUS_WORK" },
-  { t: "14:02:46", app: "VS Code",   title: "servnt/agent.swift",        cat: "FOCUS_WORK" },
+  { t: "14:02:11", app: "VS Code",   title: "velvt/agent.swift",        cat: "FOCUS_WORK" },
+  { t: "14:02:46", app: "VS Code",   title: "velvt/agent.swift",        cat: "FOCUS_WORK" },
   { t: "14:03:18", app: "Discord",   title: "Tab: A",                    cat: "COMMUNICATION" },
-  { t: "14:03:22", app: "VS Code",   title: "servnt/agent.swift",        cat: "FOCUS_WORK" },
+  { t: "14:03:22", app: "VS Code",   title: "velvt/agent.swift",        cat: "FOCUS_WORK" },
   { t: "14:03:41", app: "Twitter",   title: "Tab: B",                    cat: "SOCIAL_FEED" },
-  { t: "14:03:58", app: "VS Code",   title: "servnt/agent.swift",        cat: "FOCUS_WORK" },
+  { t: "14:03:58", app: "VS Code",   title: "velvt/agent.swift",        cat: "FOCUS_WORK" },
   { t: "14:04:09", app: "Discord",   title: "Tab: A",                    cat: "COMMUNICATION" },
   { t: "14:04:14", app: "Twitter",   title: "Tab: B",                    cat: "SOCIAL_FEED" },
   { t: "14:04:31", app: "YouTube",   title: "Tab: C",                    cat: "PASSIVE_CONSUMPTION" },
-  { t: "14:05:02", app: "VS Code",   title: "servnt/agent.swift",        cat: "FOCUS_WORK" },
+  { t: "14:05:02", app: "VS Code",   title: "velvt/agent.swift",        cat: "FOCUS_WORK" },
   { t: "14:05:24", app: "Stack Overflow", title: "Tab: D",               cat: "REFERENCE" },
-  { t: "14:05:48", app: "VS Code",   title: "servnt/agent.swift",        cat: "FOCUS_WORK" },
+  { t: "14:05:48", app: "VS Code",   title: "velvt/agent.swift",        cat: "FOCUS_WORK" },
 ];
 
 const CAT_COLOR: Record<string, string> = {
@@ -46,7 +46,7 @@ export function EventStream() {
           <i className="h-2 w-2 rounded-full bg-bad" />
           <i className="h-2 w-2 rounded-full bg-warn" />
           <i className="h-2 w-2 rounded-full bg-good" />
-          <span className="ml-2">~/servnt/events.sqlite</span>
+          <span className="ml-2">~/velvt/events.sqlite</span>
         </div>
         <span>tail -f · abstracted</span>
       </div>
