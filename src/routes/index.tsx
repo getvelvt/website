@@ -331,7 +331,7 @@ function Triggers() {
           <div className="mt-4 grid gap-3 font-mono text-[12px] md:grid-cols-2">
             <Hook
               when="if temporal_inactivity > 90m"
-              then='run ~/.servnt/scripts/close_safari.sh'
+              then='run ~/.velvt/scripts/close_safari.sh'
             />
             <Hook
               when="on cluster(VS Code ⇄ Discord) ≥ 12/30m"
