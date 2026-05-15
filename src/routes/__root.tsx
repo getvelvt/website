@@ -8,6 +8,9 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 
+import { WaitlistProvider } from "@/components/WaitlistProvider";
+import { Toaster } from "@/components/ui/sonner";
+
 import appCss from "../styles.css?url";
 
 function NotFoundComponent() {
@@ -72,19 +75,20 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Velvt — quiet behavioral intelligence for macOS" },
+      { name: "description", content: "Velvt observes how you actually use your computer and tells you specific truths about your focus. Sealed locally." },
+      { property: "og:title", content: "Velvt" },
+      { property: "og:description", content: "1–3 sealed observations a day. Everything stays on your machine." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
+      { rel: "stylesheet", href: appCss },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "" },
       {
         rel: "stylesheet",
-        href: appCss,
+        href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Instrument+Serif&display=swap",
       },
     ],
   }),
@@ -113,7 +117,10 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <Outlet />
+      <WaitlistProvider>
+        <Outlet />
+        <Toaster position="bottom-center" theme="dark" />
+      </WaitlistProvider>
     </QueryClientProvider>
   );
 }

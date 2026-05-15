@@ -9,8 +9,62 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SpecRouteImport } from './routes/spec'
+import { Route as SourceRouteImport } from './routes/source'
+import { Route as RoadmapRouteImport } from './routes/roadmap'
+import { Route as PressRouteImport } from './routes/press'
+import { Route as LocalFirstRouteImport } from './routes/local-first'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as ChangelogRouteImport } from './routes/changelog'
+import { Route as AuditRouteImport } from './routes/audit'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
+const SpecRoute = SpecRouteImport.update({
+  id: '/spec',
+  path: '/spec',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SourceRoute = SourceRouteImport.update({
+  id: '/source',
+  path: '/source',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RoadmapRoute = RoadmapRouteImport.update({
+  id: '/roadmap',
+  path: '/roadmap',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PressRoute = PressRouteImport.update({
+  id: '/press',
+  path: '/press',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LocalFirstRoute = LocalFirstRouteImport.update({
+  id: '/local-first',
+  path: '/local-first',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ChangelogRoute = ChangelogRouteImport.update({
+  id: '/changelog',
+  path: '/changelog',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuditRoute = AuditRouteImport.update({
+  id: '/audit',
+  path: '/audit',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +73,158 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/audit': typeof AuditRoute
+  '/changelog': typeof ChangelogRoute
+  '/contact': typeof ContactRoute
+  '/local-first': typeof LocalFirstRoute
+  '/press': typeof PressRoute
+  '/roadmap': typeof RoadmapRoute
+  '/source': typeof SourceRoute
+  '/spec': typeof SpecRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/audit': typeof AuditRoute
+  '/changelog': typeof ChangelogRoute
+  '/contact': typeof ContactRoute
+  '/local-first': typeof LocalFirstRoute
+  '/press': typeof PressRoute
+  '/roadmap': typeof RoadmapRoute
+  '/source': typeof SourceRoute
+  '/spec': typeof SpecRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/audit': typeof AuditRoute
+  '/changelog': typeof ChangelogRoute
+  '/contact': typeof ContactRoute
+  '/local-first': typeof LocalFirstRoute
+  '/press': typeof PressRoute
+  '/roadmap': typeof RoadmapRoute
+  '/source': typeof SourceRoute
+  '/spec': typeof SpecRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/audit'
+    | '/changelog'
+    | '/contact'
+    | '/local-first'
+    | '/press'
+    | '/roadmap'
+    | '/source'
+    | '/spec'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/audit'
+    | '/changelog'
+    | '/contact'
+    | '/local-first'
+    | '/press'
+    | '/roadmap'
+    | '/source'
+    | '/spec'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/audit'
+    | '/changelog'
+    | '/contact'
+    | '/local-first'
+    | '/press'
+    | '/roadmap'
+    | '/source'
+    | '/spec'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  AuditRoute: typeof AuditRoute
+  ChangelogRoute: typeof ChangelogRoute
+  ContactRoute: typeof ContactRoute
+  LocalFirstRoute: typeof LocalFirstRoute
+  PressRoute: typeof PressRoute
+  RoadmapRoute: typeof RoadmapRoute
+  SourceRoute: typeof SourceRoute
+  SpecRoute: typeof SpecRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/spec': {
+      id: '/spec'
+      path: '/spec'
+      fullPath: '/spec'
+      preLoaderRoute: typeof SpecRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/source': {
+      id: '/source'
+      path: '/source'
+      fullPath: '/source'
+      preLoaderRoute: typeof SourceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/roadmap': {
+      id: '/roadmap'
+      path: '/roadmap'
+      fullPath: '/roadmap'
+      preLoaderRoute: typeof RoadmapRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/press': {
+      id: '/press'
+      path: '/press'
+      fullPath: '/press'
+      preLoaderRoute: typeof PressRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/local-first': {
+      id: '/local-first'
+      path: '/local-first'
+      fullPath: '/local-first'
+      preLoaderRoute: typeof LocalFirstRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/changelog': {
+      id: '/changelog'
+      path: '/changelog'
+      fullPath: '/changelog'
+      preLoaderRoute: typeof ChangelogRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/audit': {
+      id: '/audit'
+      path: '/audit'
+      fullPath: '/audit'
+      preLoaderRoute: typeof AuditRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,7 +237,26 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  AuditRoute: AuditRoute,
+  ChangelogRoute: ChangelogRoute,
+  ContactRoute: ContactRoute,
+  LocalFirstRoute: LocalFirstRoute,
+  PressRoute: PressRoute,
+  RoadmapRoute: RoadmapRoute,
+  SourceRoute: SourceRoute,
+  SpecRoute: SpecRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}

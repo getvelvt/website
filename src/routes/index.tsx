@@ -1,7 +1,10 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "motion/react";
 import { ArrowUpRight, Lock, Eye, Database, Cpu, Bell, Workflow } from "lucide-react";
+import { InviteButton } from "@/components/InviteButton";
 import { MenuBar } from "@/components/MenuBar";
+import { SiteFooter } from "@/components/SiteFooter";
+import type { PlanId } from "@/lib/site";
 import { NotificationStack } from "@/components/NotificationStack";
 import { TimelinePanel } from "@/components/TimelinePanel";
 import { FragmentationGauge } from "@/components/FragmentationGauge";
@@ -34,7 +37,7 @@ function Index() {
       <Architecture />
       <Triggers />
       <Tiers />
-      <Foot />
+      <SiteFooter />
     </div>
   );
 }
@@ -68,12 +71,15 @@ function Hero() {
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-3">
-            <button className="inline-flex items-center gap-2 rounded-md bg-signal px-5 py-3 text-[13px] font-medium text-signal-foreground transition hover:opacity-90">
+            <InviteButton>
               Request invite <ArrowUpRight className="h-4 w-4" />
-            </button>
-            <button className="inline-flex items-center gap-2 rounded-md border border-border-strong px-5 py-3 text-[13px] text-foreground transition hover:bg-surface">
+            </InviteButton>
+            <Link
+              to="/spec"
+              className="inline-flex items-center gap-2 rounded-md border border-border-strong px-5 py-3 text-[13px] text-foreground transition hover:bg-surface"
+            >
               Read the spec
-            </button>
+            </Link>
           </div>
 
           <dl className="mt-12 grid max-w-lg grid-cols-3 gap-6 border-t border-border pt-6 font-mono">
@@ -440,16 +446,7 @@ function Tiers() {
                   </li>
                 ))}
               </ul>
-              <button
-                className={
-                  "mt-7 w-full rounded-md px-4 py-2.5 text-[13px] font-medium transition " +
-                  (t.featured
-                    ? "bg-signal text-signal-foreground hover:opacity-90"
-                    : "border border-border-strong text-foreground hover:bg-surface")
-                }
-              >
-                {t.name === "Unsealed" ? "Download agent" : "Get " + t.name}
-              </button>
+              <TierCta name={t.name} featured={t.featured} />
             </div>
           ))}
         </div>
@@ -472,29 +469,18 @@ function SectionHead({
   );
 }
 
-function Foot() {
+function TierCta({ name, featured }: { name: string; featured?: boolean }) {
+  const planMap: Record<string, PlanId> = {
+    Unsealed: "unsealed",
+    "Velvt Vault": "velvt-vault",
+    Sovereign: "sovereign",
+  };
+  const plan = planMap[name] ?? "undecided";
+  const label = name === "Unsealed" ? "Get invite" : "Get " + name;
+
   return (
-    <footer className="mx-auto flex max-w-[1400px] flex-col gap-6 px-6 py-12 md:flex-row md:items-end md:justify-between">
-      <div>
-        <div className="font-display text-3xl">Velvt</div>
-        <p className="mt-2 max-w-md text-[13px] text-muted-foreground">
-          A sealed observer for people who suspect they're not as focused as they think.
-        </p>
-      </div>
-      <div className="grid grid-cols-3 gap-8 font-mono text-[11px] uppercase tracking-wider text-muted-foreground">
-        <div className="space-y-2">
-          <div className="text-dim">product</div>
-          <div>Spec</div><div>Changelog</div><div>Roadmap</div>
-        </div>
-        <div className="space-y-2">
-          <div className="text-dim">privacy</div>
-          <div>Local-first</div><div>Audit</div><div>Source</div>
-        </div>
-        <div className="space-y-2">
-          <div className="text-dim">company</div>
-          <div>About</div><div>Press</div><div>Contact</div>
-        </div>
-      </div>
-    </footer>
+    <InviteButton plan={plan} variant={featured ? "primary" : "outline"} className="mt-7 w-full">
+      {label}
+    </InviteButton>
   );
 }
