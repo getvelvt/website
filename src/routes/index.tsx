@@ -372,31 +372,31 @@ function Hook({ when, then }: { when: string; then: string }) {
 function Tiers() {
   const tiers = [
     {
-      name: "Free", price: "$0", note: "open-source core",
+      name: "Unsealed", price: "$0", note: "open-source core",
       bullets: [
-        "Collection agent (open-source)",
+        "Collection agent (auditable source)",
         "Local fragmentation metrics",
-        "7-day data retention",
-        "100% local operation",
+        "7-day rolling memory",
+        "Sealed on-device · zero network",
       ],
     },
     {
-      name: "Servnt Plus", price: "$6", per: "/ mo", featured: true, note: "the everyday tier",
+      name: "Velvt Vault", price: "$6", per: "/ mo", featured: true, note: "the everyday seal",
       bullets: [
-        "Advanced behavioral modeling",
+        "Full behavioral modeling engine",
         "Cross-application pattern libraries",
-        "1-year data history",
-        "Weekly behavioral reports",
-        "Optional encrypted cloud sync",
+        "1-year encrypted local history",
+        "Weekly sealed behavioral reports",
+        "Optional end-to-end encrypted sync",
       ],
     },
     {
-      name: "Lifetime Local", price: "$49", per: "once", note: "no cloud, no recurring",
+      name: "Sovereign", price: "$49", per: "once", note: "lifetime · airgapped",
       bullets: [
-        "Full feature set, permanent",
-        "Local file processing only",
-        "Local model inference",
-        "Bypass cloud entirely",
+        "Full feature set, permanent license",
+        "Local-only file processing",
+        "On-device model inference",
+        "Hardware-bound key, no cloud path",
       ],
     },
   ];
