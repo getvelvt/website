@@ -448,7 +448,7 @@ function Tiers() {
                     : "border border-border-strong text-foreground hover:bg-surface")
                 }
               >
-                {t.name === "Free" ? "Download agent" : "Get " + t.name}
+                {t.name === "Unsealed" ? "Download agent" : "Get " + t.name}
               </button>
             </div>
           ))}
