@@ -10,10 +10,10 @@ import { EventStream } from "@/components/EventStream";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Servnt — passive behavioral intelligence for macOS" },
-      { name: "description", content: "Servnt observes how you actually use your computer and tells you 1–3 specific, slightly uncomfortable truths about your focus per day. No screenshots. No keylogging. Local SQLite." },
-      { property: "og:title", content: "Servnt — passive behavioral intelligence for macOS" },
-      { property: "og:description", content: "1–3 quiet observations a day. The product is the notification." },
+      { title: "Velvt — quiet behavioral intelligence for macOS" },
+      { name: "description", content: "Velvt observes how you actually use your computer and tells you 1–3 specific, slightly uncomfortable truths about your focus per day. Sealed locally. No screenshots. No keylogging." },
+      { property: "og:title", content: "Velvt — quiet behavioral intelligence for macOS" },
+      { property: "og:description", content: "1–3 sealed observations a day. Everything stays on your machine." },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
