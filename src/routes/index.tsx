@@ -244,7 +244,7 @@ function Architecture() {
             <div className="mt-4 grid gap-3 font-mono text-[12px]">
               <Pair raw='"AP Lang Research Paper"' abs='"Document: B"' />
               <Pair raw='"#general — engineering"' abs='"Channel: A"' />
-              <Pair raw='"servnt/agent.swift"' abs='"File: F"' />
+              <Pair raw='"velvt/agent.swift"' abs='"File: F"' />
             </div>
             <p className="mt-5 text-[13px] text-muted-foreground">
               The mapping dictionary lives only on your machine. Insights are
